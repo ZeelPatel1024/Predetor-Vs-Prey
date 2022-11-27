@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="aPane" prefHeight="743.0" prefWidth="1385.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <Button layoutX="908.0" layoutY="81.0" onAction="#handleStart" text="Start Simulation" textFill="#1100ff">
+         <font>
+            <Font name="Baskerville Old Face" size="18.0" />
+         </font></Button>
+
+      <GridPane fx:id="gPane" layoutX="14.0" layoutY="0.0">
+
+      </GridPane>
+      <Line endX="-102.0" endY="665.5" layoutX="806.0" layoutY="30.0" startX="-102.0" startY="-16.5" />
+      <ListView fx:id="lstPredetors" layoutX="743.0" layoutY="152.0" onMouseClicked="#clickedOnListPredetors" prefHeight="63.0" prefWidth="126.0" />
+      <Label layoutX="748.0" layoutY="125.0" text="Predetors">
+         <font>
+            <Font name="Bodoni MT Black" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="855.0" layoutY="21.0" text="Predetors vs Prey ">
+         <font>
+            <Font name="Bodoni MT Black" size="28.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lstPrey" layoutX="887.0" layoutY="152.0" onMouseClicked="#clickedOnListPrey" prefHeight="63.0" prefWidth="119.0" />
+      <Label layoutX="919.0" layoutY="125.0" text="Prey">
+         <font>
+            <Font name="Bodoni MT Black" size="23.0" />
+         </font>
+      </Label>
+      <ListView fx:id="lstResources" layoutX="1023.0" layoutY="155.0" onMouseClicked="#clickOnListResources" prefHeight="57.0" prefWidth="175.0" />
+      <Label layoutX="1049.0" layoutY="125.0" text="Resources">
+         <font>
+            <Font name="Bodoni MT Black" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonSetMaxPred" layoutX="889.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnSetMaxAmountOfPredetors" text="Set Max Amount Of Predetors">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font></Button>
+      <TextField fx:id="txtMaxAmountPred" layoutX="917.0" layoutY="262.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button fx:id="buttonMaxPrey" layoutX="904.0" layoutY="299.0" mnemonicParsing="false" onAction="#btnSetMaxAmountOPrey" prefHeight="25.0" prefWidth="175.0" text="Set Max Amount Of Prey">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font></Button>
+      <TextField fx:id="txtMaxAmountPrey" layoutX="916.0" layoutY="329.0" prefHeight="14.0" prefWidth="149.0" />
+      <Button layoutX="726.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnForestArea" text="Forest Area">
+         <font>
+            <Font name="Californian FB" size="14.0" />
+         </font></Button>
+      <Button layoutX="724.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnOpenFeild" text="Open Feild">
+         <font>
+            <Font name="Californian FB" size="14.0" />
+         </font></Button>
+      <Button layoutX="822.0" layoutY="464.0" mnemonicParsing="false" onAction="#btnFoodPatch" text="Food Patch">
+         <font>
+            <Font name="Californian FB" size="14.0" />
+         </font></Button>
+      <Button layoutX="816.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnWateringHole" prefHeight="34.0" prefWidth="82.0" text="Watering Hole" wrapText="true">
+         <font>
+            <Font name="Californian FB" size="10.0" />
+         </font></Button>
+      <Label layoutX="1108.0" layoutY="300.0" text="Animal Chosen:">
+         <font>
+            <Font name="Californian FB" size="17.0" />
+         </font></Label>
+      <Label fx:id="lblAnimalChosen" layoutX="1130.0" layoutY="322.0" text="_____________" />
+      <Label layoutX="728.0" layoutY="419.0" text="Spawn Animal Chosen By:">
+         <font>
+            <Font name="Californian FB" size="17.0" />
+         </font></Label>
+      <Line endX="100.0" layoutX="813.0" layoutY="456.0" startX="-95.0" />
+      <Line endX="100.0" layoutX="813.0" layoutY="539.0" startX="-95.0" />
+      <Line endX="-100.0" endY="82.5" layoutX="822.0" layoutY="451.0" startX="-100.0" />
+      <Line endX="-100.0" endY="82.5" layoutX="1009.0" layoutY="457.0" startX="-100.0" />
+      <Label layoutX="724.0" layoutY="547.0" text="Max Prey Num: ">
+         <font>
+            <Font name="Californian FB Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="710.0" layoutY="612.0" text="Max Predetor Num: ">
+         <font>
+            <Font name="Californian FB Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="lblMaxPreyNum" layoutX="746.0" layoutY="570.0" text="______">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font></Label>
+      <Label fx:id="lblPedetorNum" layoutX="750.0" layoutY="635.0" prefHeight="14.0" prefWidth="45.0" text="______">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font></Label>
+      <Button layoutX="802.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnTriggerRainyDay" text="Rainy Day">
+         <font>
+            <Font name="Californian FB" size="14.0" />
+         </font></Button>
+      <Button layoutX="717.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#btnTriggerDrought" prefHeight="28.0" prefWidth="77.0" text="Drought">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font></Button>
+      <Label layoutX="766.0" layoutY="218.0" text="Weather: ">
+         <font>
+            <Font name="Bodoni MT Bold" size="18.0" />
+         </font></Label>
+      <Slider fx:id="weatherChosenSlider" layoutX="733.0" layoutY="312.0" onMouseReleased="#dragedWeatherRates" />
+      <Label layoutX="716.0" layoutY="285.0" text="Weather Chosen: ">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblWeatherChosen" layoutX="831.0" layoutY="284.0" text="_________" />
+      <Label layoutX="733.0" layoutY="320.0" text="0%" />
+      <Label layoutX="789.0" layoutY="326.0" text="50%" />
+      <Label layoutX="848.0" layoutY="326.0" text="100%" />
+      <Label layoutX="716.0" layoutY="368.0" text="Weather Change Expected In: ">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label fx:id="lblWeatherChangeExp" layoutX="789.0" layoutY="397.0" text="_______" />
+      <Label layoutX="949.0" layoutY="372.0" text="Wolves: light red, red, dark red">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="949.0" layoutY="397.0" text="Alpha: Blue">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="1047.0" layoutY="397.0" text="Beta: Purple">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="929.0" layoutY="519.0" />
+      <Label layoutX="949.0" layoutY="421.0" text="Foxes: light orange, orange, dark orange">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="949.0" layoutY="446.0" text="Alpha: Gold ">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="1047.0" layoutY="446.0" text="Beta: Turqoise">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="948.0" layoutY="470.0" text="Bunnies: light purple, purple, dark purple">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <Label layoutX="948.0" layoutY="502.0" text="Dears: light yellow, yellow, dark yellow">
+         <font>
+            <Font name="Californian FB" size="16.0" />
+         </font></Label>
+      <ListView fx:id="lstdeadanddayData" layoutX="1083.0" layoutY="567.0" prefHeight="99.0" prefWidth="107.0" />
+      <Label layoutX="1047.0" layoutY="540.0" text="Num Prey Dead vs Num Days">
+         <font>
+            <Font name="Californian FB Bold" size="15.0" />
+         </font></Label>
+      <Button layoutX="1092.0" layoutY="262.0" mnemonicParsing="false" onAction="#butIncreaseAllHealth" text="Decrease All Health">
+         <font>
+            <Font name="Californian FB" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="872.0" layoutY="53.0" text="The animal hunger games">
+         <font>
+            <Font name="Bodoni MT Black" size="16.0" />
+         </font>
+      </Label>
+      <Line endX="-101.0" endY="645.5" layoutX="1346.0" layoutY="44.0" startX="-101.0" startY="-30.5" />
+      <Line endX="428.5" endY="656.0" layoutX="816.0" layoutY="33.0" startX="-111.5" startY="656.0" />
+      <Line endX="428.5" endY="656.0" layoutX="816.0" layoutY="-642.0" startX="-111.5" startY="656.0" />
+      <LineChart fx:id="lineChartShow" layoutX="847.0" layoutY="542.0" prefHeight="99.0" prefWidth="175.0">
+         <xAxis>
+            <NumberAxis side="BOTTOM" fx:id="xAxis" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="yAxis" side="LEFT" />
+         </yAxis>
+      </LineChart>
+
+
+   </children>
+</AnchorPane>
